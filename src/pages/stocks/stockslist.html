@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+     <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Stocks Quotes</ion-title>
+    <ion-buttons end>
+      <button>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+ </ion-header>
+ 
+ <ion-content padding class="page1">
+ 
+   
+
+        <ion-list>
+          <ion-item *ngFor="let obj of quoteList|slice:0:10 ;let i=index">
+
+            <a (click)="getDetailsAboutStock(obj.symbol)">
+
+            <ion-row>
+
+                {{obj.symbol}}
+
+            </ion-row>
+
+                      </a>
+
+            <ion-row center width-25 >
+            <p>                {{obj.time  | date}}
+               </p>
+
+            </ion-row>
+            <span item-right >
+                price : {{obj.price}} 
+            </span>
+
+         
+
+          
+            </ion-item>
+      </ion-list>
+   
+
+
+ </ion-content>
+  

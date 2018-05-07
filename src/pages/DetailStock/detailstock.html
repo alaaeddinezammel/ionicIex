@@ -1,0 +1,55 @@
+<ion-header>
+      <ion-navbar>
+          <ion-title>Stock Detail</ion-title>
+      </ion-navbar>
+  </ion-header>
+  <ion-content padding class="page1">
+
+<ion-card class="stock-detail-cmp">
+      <ion-item> Symbol :{{obj.quote.symbol}}</ion-item>
+      <ion-row text-wrap>
+          <ion-col>Average Volume:</ion-col>
+          <ion-col>{{obj.quote.avgTotalVolume}}</ion-col>
+          <ion-col>Calculation price:</ion-col>
+          <ion-col>{{obj.quote.calculationPrice}}</ion-col>
+      </ion-row>
+      <ion-row text-wrap>
+          <ion-col>Change:</ion-col>
+          <ion-col>{{obj.quote.change}}</ion-col>
+          <ion-col>Change Percent:</ion-col>
+          <ion-col>{{obj.quote.changePercent}}</ion-col>
+      </ion-row>
+      <ion-row text-wrap>
+          <ion-col>Close:</ion-col>
+          <ion-col>{{obj.quote.close}}</ion-col>
+          <ion-col>Close Time:</ion-col>
+          <ion-col>{{obj.quote.closeTime | date}}</ion-col>
+      </ion-row>
+      
+      <ion-row text-wrap>
+          <ion-col>Latest Price:</ion-col>
+          <ion-col>{{obj.quote.latestPrice}}</ion-col>
+          <ion-col>Delayed Price:</ion-col>
+          <ion-col>{{obj.quote.delayedPrice}}</ion-col>
+      </ion-row>
+      <ion-row text-wrap>
+          <ion-col>Sector:</ion-col>
+          <ion-col>{{obj.quote.sector}}</ion-col>
+          <ion-col>Latest Volume:</ion-col>
+          <ion-col>{{obj.quote.latestVolume}}</ion-col>
+      </ion-row>
+  </ion-card>
+
+
+  <!--  news starts -->
+
+  <ion-list> 
+       
+            <ion-title>News</ion-title>
+     
+      <ion-item  *ngFor="let news of obj.news">
+                  <a   style="text-decoration: none !important" [href]="news.url">   <p> {{news.headline}} </p> </a>
+                     
+      </ion-item>
+</ion-list>
+  </ion-content>
